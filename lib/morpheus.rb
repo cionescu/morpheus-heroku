@@ -1,6 +1,8 @@
 require 'morpheus/fetch'
 require 'morpheus/heroku'
 
+require 'morpheus/railtie'
+
 module Morpheus
   extend self
 
