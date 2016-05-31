@@ -25,7 +25,7 @@ module Morpheus
     end
 
     def download_backup!
-      Heroku.run(command: "curl -o #{Config.backup_location} `heroku pg:backups public-url`")
+      Heroku.run(command: "curl -o #{Morpheus.configuration.backup_location} `heroku pg:backups public-url`")
     end
   end
 end
