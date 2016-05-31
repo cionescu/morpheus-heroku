@@ -1,6 +1,7 @@
 namespace :db do
   desc 'Load a production db into dev'
   task load: :environment do
+    Morpheus.fetch
     Morpheus.load
   end
 

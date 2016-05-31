@@ -1,4 +1,3 @@
-require 'fileutils'
 module Morpheus
   module Fetch
     extend self
@@ -14,19 +13,19 @@ module Morpheus
     private
 
     def backup_available?
-      Heroku.heroku_run(command: "heroku pg:backups public-url")
+      Heroku.run(command: "heroku pg:backups public-url")
     end
 
     def generate_backup!
-      Heroku.heroku_run(command: "heroku pg:backups capture")
+      Heroku.run(command: "heroku pg:backups capture")
     end
 
     def backup_url
-      Heroku.heroku_run(command: "heroku pg:backups public-url")
+      Heroku.run(command: "heroku pg:backups public-url")
     end
 
     def download_backup!
-      Heroku.heroku_run(command: "curl -o tmp/latest.dump `heroku pg:backups public-url`")
+      Heroku.run(command: "curl -o #{Config.backup_location} `heroku pg:backups public-url`")
     end
   end
 end

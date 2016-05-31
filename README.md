@@ -9,13 +9,16 @@ installed and `curl`. Your session must be authenticated with heroku (i.e. runni
 
 
 
-## Fetch a PG backup from Heroku
+## Fetch a database backup from Heroku
 
-Morpheus will fetch the latest pg backup. If there is no backup, then it will create one. It is
-strongly recommended to set a recurring Heroku backup. https://devcenter.heroku.com/articles/heroku-postgres-backups#scheduling-backups
+Morpheus will fetch the latest PG backup. If there is no backup, then it will create one. It is
+strongly recommended to set a recurring Heroku backup to avoid loading stale data.
+https://devcenter.heroku.com/articles/heroku-postgres-backups#scheduling-backups
 
-`$ bundle exec rake db:fetch`
+`bundle exec rake db:fetch`
 
-## Load a PG backup
+## Load a database backup
 
-`$ bundle exec rake db:load`
+Morpheus will fetch the latest database backup and then load it using the `pg_restore` command.
+
+`bundle exec rake db:load`
