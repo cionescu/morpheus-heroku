@@ -30,3 +30,10 @@ https://devcenter.heroku.com/articles/heroku-postgres-backups#scheduling-backups
 Morpheus will fetch the latest database backup and then load it using the `pg_restore` command.
 
 `bundle exec rake db:load`
+
+## Rails 5 Tips
+
+If you see `ActiveRecord::ProtectedEnvironmentError: You are attempting to run a destructive action against your 'production' database.`
+even when running in development, then you need to do this:
+
+`bin/rails db:environment:set RAILS_ENV=development`
