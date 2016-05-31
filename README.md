@@ -7,7 +7,15 @@ A set of rake tasks to automate interacting with Heroku.
 This gem relies heavily on bash for interacting with Heroku. It's assuming you have the `Heroku CLI`
 installed and `curl`. Your session must be authenticated with heroku (i.e. running `heroku logs` works).
 
+## Install
 
+Add this to your gemfile
+
+`gem 'morpheus'`
+
+Generate an initializer for `config/morpheus.rb` with
+
+`bundle exec rails generate morpheus`
 
 ## Fetch a database backup from Heroku
 
