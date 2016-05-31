@@ -7,6 +7,10 @@ require 'morpheus/config'
 require 'morpheus/railtie'
 
 module Morpheus
+  class << self
+    attr_accessor :configuration
+  end
+
   extend self
 
   def fetch
@@ -15,5 +19,10 @@ module Morpheus
 
   def load
     Morpheus::Load.run
+  end
+
+  def self.configure
+    self.configuration ||= Config.new
+    yield(configuration)
   end
 end
