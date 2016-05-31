@@ -13,19 +13,19 @@ module Morpheus
     private
 
     def backup_available?
-      Heroku.run(command: "heroku pg:backups public-url")
+      Helper.run(command: "heroku pg:backups public-url")
     end
 
     def generate_backup!
-      Heroku.run(command: "heroku pg:backups capture")
+      Helper.run(command: "heroku pg:backups capture")
     end
 
     def backup_url
-      Heroku.run(command: "heroku pg:backups public-url")
+      Helper.run(command: "heroku pg:backups public-url")
     end
 
     def download_backup!
-      Heroku.run(command: "curl -o #{Morpheus.configuration.backup_location} `heroku pg:backups public-url`")
+      Helper.run(command: "curl -o #{Morpheus.configuration.backup_location} `heroku pg:backups public-url`")
     end
   end
 end

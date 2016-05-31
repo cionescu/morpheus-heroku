@@ -1,7 +1,7 @@
 require 'morpheus/fetch'
 require 'morpheus/load'
 
-require 'morpheus/heroku'
+require 'morpheus/helper'
 require 'morpheus/config'
 
 require 'morpheus/railtie'

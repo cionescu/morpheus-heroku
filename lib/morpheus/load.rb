@@ -19,7 +19,7 @@ module Morpheus
     end
 
     def load_database!
-      Heroku.run(command: "pg_restore -O -n public -d #{Morpheus.configuration.database_name} #{Morpheus.configuration.backup_location}")
+      Helper.run(command: "pg_restore -O -n public -d #{Morpheus.configuration.database_name} #{Morpheus.configuration.backup_location}")
     end
   end
 end
