@@ -37,7 +37,7 @@ module Morpheus
     end
 
     def update_git!
-      Helper.bash_run(command: "git push origin #{git_branch}")
+      Helper.bash_run(command: "git push origin --tags")
     end
   end
 end
