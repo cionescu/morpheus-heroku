@@ -21,6 +21,10 @@ module Morpheus
     Morpheus::Load.run
   end
 
+  def deploy(environment = :production)
+
+  end
+
   def self.configure
     self.configuration ||= Config.new
     yield(configuration)

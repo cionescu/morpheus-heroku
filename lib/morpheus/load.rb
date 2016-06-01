@@ -3,12 +3,17 @@ module Morpheus
     extend self
 
     def run
+      ensure_db_environment! if Rails.env.development?
       drop_database!
       create_database!
       load_database!
     end
 
     private
+
+    def ensure_db_environment!
+      Helper.bash_run(command: "bundle exec rake db:environment:set RAILS_ENV=development")
+    end
 
     def drop_database!
       Rake::Task["db:drop"].invoke
@@ -19,7 +24,7 @@ module Morpheus
     end
 
     def load_database!
-      Helper.run(command: "pg_restore -O -n public -d #{Morpheus.configuration.database_name} #{Morpheus.configuration.backup_location}")
+      Helper.bash_run(command: "pg_restore -O -n public -d #{Morpheus.configuration.database_name} #{Morpheus.configuration.backup_location}")
     end
   end
 end
