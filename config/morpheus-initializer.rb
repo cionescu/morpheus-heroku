@@ -5,4 +5,7 @@ Morpheus.configure do |config|
 
   # By default, we use ActiveRecord::Base.connection_config[:database]
   # config.database_name = "database_development"
+
+  # Show debugging events
+  # config.log_events = false
 end

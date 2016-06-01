@@ -16,10 +16,12 @@ module Morpheus
     end
 
     def drop_database!
+      Helper.logger("Rake::Task['db:drop']")
       Rake::Task["db:drop"].invoke
     end
 
     def create_database!
+      Helper.logger("Rake::Task['db:create']")
       Rake::Task["db:create"].invoke
     end
 

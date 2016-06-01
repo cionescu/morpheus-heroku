@@ -22,8 +22,17 @@ module Morpheus
 
     def logger(message = "")
       if Morpheus.configuration.log_events
-        puts "<MORPHEUS> Running: *#{command}*. RAILS_ENV: #{Rails.env}. APP_NAME: #{Morpheus.configuration.app_name} </MORPHEUS>"
+        puts "<MORPHEUS>".text_red
+        puts "Running: #{message}".text_green
+        puts "RAILS_ENV: #{Rails.env}".text_green
+        puts "APP_NAME: #{Morpheus.configuration.app_name}".text_green
+        puts "</MORPHEUS>".text_red
       end
     end
   end
+end
+
+class String
+  def text_red;            "\e[31m#{self}\e[0m" end
+  def text_green;          "\e[32m#{self}\e[0m" end
 end
