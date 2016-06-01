@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/morpheus-heroku.svg)](https://badge.fury.io/rb/morpheus-heroku)
+
 # MorpheusHeroku
 
 A set of rake tasks to automate interacting with Heroku.
@@ -17,7 +19,7 @@ Add this to your gemfile
 
 Generate an initializer for `config/morpheus-heroku.rb` with
 
-`bundle exec rails generate morpheus-heroku`
+`bundle exec rails generate morpheus_heroku`
 
 ## Automate deploying to Heroku
 
