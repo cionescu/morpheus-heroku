@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'morpheus/version'
+require 'morpheus-heroku/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "morpheus"
-  spec.version       = Morpheus::VERSION
+  spec.name          = "morpheus-heroku"
+  spec.version       = MorpheusHeroku::VERSION
   spec.authors       = ["Catalin Ionescu"]
   spec.email         = ["catalin.ionescu282@gmail.com"]
 
   spec.summary       = "A set of Rake scrips to automate interactions with Heroku"
-  spec.homepage      = "https://github.com/cionescu/morpheus"
+  spec.homepage      = "https://github.com/cionescu/morpheus-heroku"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

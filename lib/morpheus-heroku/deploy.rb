@@ -1,4 +1,4 @@
-module Morpheus
+module MorpheusHeroku
   module Deploy
     extend self
 

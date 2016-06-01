@@ -1,4 +1,4 @@
-module Morpheus
+module MorpheusHeroku
   class Config
     attr_accessor :database_name, :backup_location, :app_name, :log_events
 

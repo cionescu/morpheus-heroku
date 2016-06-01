@@ -1,3 +1,3 @@
-module Morpheus
+module MorpheusHeroku
   VERSION = "0.1.0"
 end

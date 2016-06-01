@@ -1,4 +1,4 @@
-module Morpheus
+module MorpheusHeroku
   module Fetch
     extend self
 
@@ -25,7 +25,7 @@ module Morpheus
     end
 
     def download_backup!
-      Helper.bash_run(command: "curl -o #{Morpheus.configuration.backup_location} `heroku pg:backups public-url`")
+      Helper.bash_run(command: "curl -o #{MorpheusHeroku.configuration.backup_location} `heroku pg:backups public-url`")
     end
   end
 end

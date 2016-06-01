@@ -1,4 +1,4 @@
-module Morpheus
+module MorpheusHeroku
   class Railtie < Rails::Railtie
     rake_tasks do
       load "tasks/db.rake"

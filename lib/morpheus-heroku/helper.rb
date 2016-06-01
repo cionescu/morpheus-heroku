@@ -1,10 +1,10 @@
-module Morpheus
+module MorpheusHeroku
   module Helper
     extend self
 
     def heroku_run(command: "")
-      if Morpheus.configuration.app_name.present?
-        command += " --app #{Morpheus.configuration.app_name}"
+      if MorpheusHeroku.configuration.app_name.present?
+        command += " --app #{MorpheusHeroku.configuration.app_name}"
       end
       generic_run(command)
     end
@@ -14,11 +14,11 @@ module Morpheus
     end
 
     def logger(message = "")
-      if Morpheus.configuration.log_events
+      if MorpheusHeroku.configuration.log_events
         puts "<MORPHEUS>".text_red
         puts "Running: #{message}".text_green
         puts "RAILS_ENV: #{Rails.env}".text_green
-        puts "APP_NAME: #{Morpheus.configuration.app_name}".text_green
+        puts "APP_NAME: #{MorpheusHeroku.configuration.app_name}".text_green
         puts "</MORPHEUS>".text_red
       end
     end

@@ -1,4 +1,4 @@
-Morpheus.configure do |config|
+MorpheusHeroku.configure do |config|
   # config.app_name = "app_name"
 
   # config.backup_location = "tmp/latest.dump"

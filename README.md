@@ -1,4 +1,4 @@
-# Morpheus
+# MorpheusHeroku
 
 A set of rake tasks to automate interacting with Heroku.
 
@@ -13,22 +13,22 @@ You must have a Heroku remote set up (`heroku git:remote -a my-app-name`).
 
 Add this to your gemfile
 
-`gem 'morpheus'`
+`gem 'morpheus-heroku'`
 
-Generate an initializer for `config/morpheus.rb` with
+Generate an initializer for `config/morpheus-heroku.rb` with
 
-`bundle exec rails generate morpheus`
+`bundle exec rails generate morpheus-heroku`
 
 ## Automate deploying to Heroku
 
-Morpheus will infer the current branch from git, deploy it to Heroku master, run the migrations and then tag
+MorpheusHeroku will infer the current branch from git, deploy it to Heroku master, run the migrations and then tag
 the release in git.
 
 `bundle exec rake deploy:production`
 
 ## Fetch a database backup from Heroku
 
-Morpheus will fetch the latest PG backup. If there is no backup, then it will create one. It is
+MorpheusHeroku will fetch the latest PG backup. If there is no backup, then it will create one. It is
 strongly recommended to set a recurring Heroku backup to avoid loading stale data.
 https://devcenter.heroku.com/articles/heroku-postgres-backups#scheduling-backups
 
@@ -36,7 +36,7 @@ https://devcenter.heroku.com/articles/heroku-postgres-backups#scheduling-backups
 
 ## Load a database backup
 
-Morpheus will fetch the latest database backup and then load it using the `pg_restore` command.
+MorpheusHeroku will fetch the latest database backup and then load it using the `pg_restore` command.
 
 `bundle exec rake db:load`
 

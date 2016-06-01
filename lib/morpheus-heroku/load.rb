@@ -1,4 +1,4 @@
-module Morpheus
+module MorpheusHeroku
   module Load
     extend self
 
@@ -26,7 +26,7 @@ module Morpheus
     end
 
     def load_database!
-      Helper.bash_run(command: "pg_restore -O -n public -d #{Morpheus.configuration.database_name} #{Morpheus.configuration.backup_location}")
+      Helper.bash_run(command: "pg_restore -O -n public -d #{MorpheusHeroku.configuration.database_name} #{MorpheusHeroku.configuration.backup_location}")
     end
   end
 end
