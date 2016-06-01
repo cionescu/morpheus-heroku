@@ -6,6 +6,7 @@ module Morpheus
       ensure_local_remote_is_up_to_date!
       deploy_to_heroku!
       run_database_migrations!
+      restart_server!
       tag_release!
       update_git!
     end
@@ -38,6 +39,10 @@ module Morpheus
 
     def update_git!
       Helper.bash_run(command: "git push origin --tags")
+    end
+
+    def restart_server!
+      Helper.heroku_run(command: "heroku restart")
     end
   end
 end
