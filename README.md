@@ -6,6 +6,8 @@ A set of rake tasks to automate interacting with Heroku.
 
 This gem relies heavily on bash for interacting with Heroku. It's assuming you have the `Heroku CLI`
 installed and `curl`. Your session must be authenticated with heroku (i.e. running `heroku logs` works).
+You must have a Heroku remote set up (`heroku git:remote -a my-app-name`).
+*Warning* We use `--force` when deploying to Heroku.
 
 ## Install
 
@@ -16,6 +18,13 @@ Add this to your gemfile
 Generate an initializer for `config/morpheus.rb` with
 
 `bundle exec rails generate morpheus`
+
+## Automate deploying to Heroku
+
+Morpheus will infer the current branch from git, deploy it to Heroku master, run the migrations and then tag
+the release in git.
+
+`bundle exec rake deploy:production`
 
 ## Fetch a database backup from Heroku
 
