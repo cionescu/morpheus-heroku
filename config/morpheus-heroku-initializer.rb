@@ -10,5 +10,5 @@ MorpheusHeroku.configure do |config|
   # config.log_events = false
 
   # Your development email. Will not scramble emails containing this string
-  # config.dev_email = "@blah.com"
+  # config.dev_email = "dev@blah.com"
 end

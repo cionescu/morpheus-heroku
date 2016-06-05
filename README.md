@@ -9,7 +9,7 @@ A set of rake tasks to automate interacting with Heroku.
 This gem relies heavily on bash for interacting with Heroku. It's assuming you have the `Heroku CLI`
 installed and `curl`. Your session must be authenticated with heroku (i.e. running `heroku logs` works).
 You must have a Heroku remote set up (`heroku git:remote -a my-app-name`).
-*Warning* We use `--force` when deploying to Heroku.
+**Warning** We use `--force` when deploying to Heroku.
 
 ## Change Log
 
@@ -45,6 +45,13 @@ strongly recommended to set a recurring Heroku backup to avoid loading stale dat
 MorpheusHeroku will fetch the latest database backup and then load it using the `pg_restore` command.
 
 `bundle exec rake db:load`
+
+## Scramblers
+
+### Email
+
+An email will be scrambled if it doesn't contain the substring in `config.dev_email`. Say your dev email is *dev@example.com*.
+An email like *john@company.com* will be scrambled as *dev+234235@example.com*. Email *doe@example.com* will be unchanged.
 
 ## Rails 5 Tips
 
