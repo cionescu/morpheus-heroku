@@ -11,6 +11,10 @@ installed and `curl`. Your session must be authenticated with heroku (i.e. runni
 You must have a Heroku remote set up (`heroku git:remote -a my-app-name`).
 *Warning* We use `--force` when deploying to Heroku.
 
+## Change Log
+
+[Change Log](./CHANGELOG.md)
+
 ## Install
 
 Add this to your gemfile
@@ -32,7 +36,7 @@ the release in git.
 
 MorpheusHeroku will fetch the latest PG backup. If there is no backup, then it will create one. It is
 strongly recommended to set a recurring Heroku backup to avoid loading stale data.
-https://devcenter.heroku.com/articles/heroku-postgres-backups#scheduling-backups
+[https://devcenter.heroku.com/articles/heroku-postgres-backups#scheduling-backups]()
 
 `bundle exec rake db:fetch`
 

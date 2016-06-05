@@ -3,6 +3,7 @@ module MorpheusHeroku
     extend self
 
     def production
+      fetch_active_remotes!
       ensure_local_remote_is_up_to_date!
       deploy_to_heroku!
       run_database_migrations!
@@ -12,6 +13,10 @@ module MorpheusHeroku
     end
 
     private
+
+    def fetch_active_remotes!
+      Helper.bash_run(command: "git fetch")
+    end
 
     def git_branch
       @branch ||= `git branch | grep -e "^*"`.strip.gsub("* ", "")
