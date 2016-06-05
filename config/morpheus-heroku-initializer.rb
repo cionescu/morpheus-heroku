@@ -8,4 +8,7 @@ MorpheusHeroku.configure do |config|
 
   # Show debugging events
   # config.log_events = false
+
+  # Your development email. Will not scramble emails containing this string
+  # config.dev_email = "@blah.com"
 end

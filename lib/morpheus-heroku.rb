@@ -5,6 +5,8 @@ require 'morpheus-heroku/deploy'
 require 'morpheus-heroku/helper'
 require 'morpheus-heroku/config'
 
+require 'morpheus-heroku/scramblers/email'
+
 require 'morpheus-heroku/railtie'
 
 module MorpheusHeroku
