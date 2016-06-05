@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Email Scrambler
+
 *Fixes*
 
 - Perform a git fetch before trying to update the remote
