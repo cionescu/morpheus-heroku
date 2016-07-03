@@ -1,6 +1,8 @@
 module MorpheusHeroku
   module Deploy
-    extend self
+    DEPLOY_ENV = "production"
+
+    module_function
 
     def production
       fetch_active_remotes!
@@ -39,7 +41,7 @@ module MorpheusHeroku
     end
 
     def tag_name
-      "heroku_deploy_#{Time.now.to_s(:db).gsub(/[- :]/, "_")}"
+      "heroku_#{DEPLOY_ENV}_#{Time.now.to_s(:db).gsub(/[- :]/, "_")}"
     end
 
     def update_git!
