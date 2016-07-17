@@ -2,7 +2,7 @@ module MorpheusHeroku
   module Deploy
     DEPLOY_ENV = "production"
 
-    module_function
+    extend self
 
     def production
       fetch_active_remotes!
