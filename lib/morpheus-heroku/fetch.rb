@@ -3,25 +3,14 @@ module MorpheusHeroku
     extend self
 
     def run
-      unless backup_available?
-        Rails.logger.info "No backup available. Generating one"
-        generate_backup!
-      end
+      generate_backup!
       download_backup!
     end
 
     private
 
-    def backup_available?
-      Helper.heroku_run(command: "heroku pg:backups public-url")
-    end
-
     def generate_backup!
       Helper.heroku_run(command: "heroku pg:backups capture")
-    end
-
-    def backup_url
-      Helper.heroku_run(command: "heroku pg:backups public-url")
     end
 
     def download_backup!
