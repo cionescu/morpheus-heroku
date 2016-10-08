@@ -19,7 +19,7 @@ You must have a Heroku remote set up (`heroku git:remote -a my-app-name`).
 
 Add this to your gemfile
 
-`gem 'morpheus-heroku', '0.1.0'`
+`gem 'morpheus-heroku', '0.2.3'`
 
 Generate an initializer for `config/morpheus-heroku.rb` with
 
