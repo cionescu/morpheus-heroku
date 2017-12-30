@@ -10,6 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["catalin.ionescu282@gmail.com"]
 
   spec.summary       = "A set of Rake scrips to automate interactions with Heroku"
+  spec.description   = "Rake scripts for creating heroku postgres dumps and load them in development."
   spec.homepage      = "https://github.com/cionescu/morpheus-heroku"
   spec.license       = "MIT"
 
