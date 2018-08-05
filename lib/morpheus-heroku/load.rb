@@ -19,7 +19,7 @@ module MorpheusHeroku
         WHERE datname = current_database()
           AND pid <> pg_backend_pid();
       SQL
-      Helper.bash_run(command: "psql -d seriesreminder_development -c '#{sql_command}'")
+      Helper.bash_run(command: "psql -d #{MorpheusHeroku.configuration.database_name} -c '#{sql_command}'")
     end
 
     def ensure_db_environment!
