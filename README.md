@@ -1,4 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/morpheus-heroku.svg)](https://badge.fury.io/rb/morpheus-heroku)
+[![Open Source Helpers](https://www.codetriage.com/cionescu/morpheus-heroku/badges/users.svg)](https://www.codetriage.com/cionescu/morpheus-heroku)
 
 # MorpheusHeroku
 
