@@ -59,3 +59,13 @@ If you see `ActiveRecord::ProtectedEnvironmentError: You are attempting to run a
 even when running in development, then you need to do this:
 
 `bin/rails db:environment:set RAILS_ENV=development`
+
+## Development
+
+```
+$ gem bump
+
+$ gem release
+
+$ gem tag
+```
