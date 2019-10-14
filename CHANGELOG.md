@@ -1,11 +1,12 @@
 # Change Log
 
-## Unreleased
+## 0.4.0
 
 - Email Scrambler
 
 *Fixes*
 
+- Fix `Failed to create the file tmp/latest.dump` [@rcsm, #1]
 - Perform a git fetch before trying to update the remote
 
 ## 0.1.0
