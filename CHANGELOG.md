@@ -1,10 +1,16 @@
 # Change Log
 
+## 0.4.1
+
+_Fixes_
+
+- Use the app name when generating the download url for the backup
+
 ## 0.4.0
 
 - Email Scrambler
 
-*Fixes*
+_Fixes_
 
 - Fix `Failed to create the file tmp/latest.dump` [@rcsm, #1]
 - Perform a git fetch before trying to update the remote
