@@ -27,7 +27,7 @@ module MorpheusHeroku
 
     def generic_run(command)
       Helper.logger(command)
-      Bundler.with_clean_env do
+      Bundler.with_unbundled_env do
         system(command) || abort("\n== Command #{command} failed ==")
       end
     end
