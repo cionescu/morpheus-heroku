@@ -27,8 +27,14 @@ module MorpheusHeroku
 
     def generic_run(command)
       Helper.logger(command)
-      Bundler.with_unbundled_env do
-        system(command) || abort("\n== Command #{command} failed ==")
+      if Bundler.respond_to?(:with_unbundled_env)
+        Bundler.with_unbundled_env do
+          system(command) || abort("\n== Command #{command} failed ==")
+        end
+      else
+        Bundler.with_clean_env do
+          system(command) || abort("\n== Command #{command} failed ==")
+        end
       end
     end
   end

@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.5.1
+
+- Bring back `Bundler.with_clean_env` if `Bundler.with_unbundled_env` is not defined
+
 ## 0.5.0
 
 - Replace `Bundler.with_clean_env` with `Bundler.with_unbundled_env` (fix deprecation warning)
