@@ -1,5 +1,8 @@
 # Change Log
 
+## 0.6.0
+- Rails 7 replaced `ActiveRecord::Base.connection_config` with `ActiveRecord::Base.connection_db_config` so we handle both
+
 ## 0.5.1
 
 - Bring back `Bundler.with_clean_env` if `Bundler.with_unbundled_env` is not defined
